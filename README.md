@@ -8,6 +8,10 @@ Urvana general documentation
 
 - Postman collection and environment JSONs can be found under POSTMAN Directory (Useful for importing and then running on your own postman)
 
+## how to use the api?
+- Use the login method to log in and obtain a auth token as well as other firebase auth useful data. 
+- The postman method already implements a tests which sets the auth token on the environment variable called: userToken which is already set up on all requests
+
 # Entities and Description
 ### User
 - A user can be a: 
