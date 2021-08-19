@@ -47,9 +47,40 @@ Urvana general documentation
 - maintenance fees have a residential attached in order to be able to define whick fees apply to a specific residential
 - - this is because fees might vary across residentials, For this purposes fees are specific to a residential, which we use to generate a monhtly balance to pay. 
 
+### maintenance fee types
+- a maintenance fee must have a type in order to know if it's a monhtly reccuring fee or a single charge fee
+- if it's monhtly reccuring fee a cron will add it to the month's statement every x day of the month.
+- - this correspondt to a recurring invoice generated every month
+- If it's a single charge fee it must be manually added to a new monthly fee which equates to an individual, non-recurring invoice
 
+### monhtly_fee
+- a monhtly fee is actually the invoice generated monthy or the "monthly maintenance fee" which is generated every month and groups a set of maintenance fees that must be charged every month based on their type. 
+- think of the monthly fee as the the invoice header whick includes:
+- - property_id (who pays), total (total amount to pay), date (month to which it belongs), status (canceled 0, new (not paid) 1 or paid 2) 
+- a monhtly fee groups maintenanfe fees using monthly_fee_detail table as pivot to join a many-many relation between each other.
+
+### delivery
+- a delivery is a way for receptionists to register food, correspondence, packages and others. for a property. 
+- this is way to keep a log of how and when packages arrived with information about time delivered, who delivered, state of the package, and other metadata.
+- this is mainly for security and administrative issues. 
+- also when a delivery arrived users will receive a push notification telling them a package was delivered for their appartment.
+- - when a delivery record is inserted, a push method (from back-end) must be executed to notify user *not done yet
+
+### visit
+- a visits is way for users to register visit from a visitor. 
+- a visit contains date and time of arrival to inform the receptionist if a visitor is able to enter the residential with out the need to call or request for access. Think of a way of pre-approving visits 
+- visit registers will also allow receptionist to register a visit altough if was not added by the user in the app. This will serve as security log.
+- when a new visit is added a notification must be sent to the user as well. 
+
+### visitor
+- a visitor represents a person that is attached to a visit.
+- we separated a visitor from a visit to be able to identify visitors from multiple visits.
+- visitors have name, lastname and personal id information such as: front and back pictures from it's perosnal document, id number, and other metadata
+- visitors could be marked as favourites in order to be able to be quickly added to a new visit record 
 
 # Entities and Relationships Diagram
+![alt text](https://github.com/mayferdev/urvana-documentation/blob/main/assets/diagram1.png?raw=true)
+
 
 # Database Diagram
 ![alt text](https://github.com/mayferdev/urvana-documentation/blob/main/assets/DIAGRAM.png?raw=true)
