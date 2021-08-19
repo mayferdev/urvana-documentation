@@ -11,4 +11,4 @@ Urvana general documentation
 # Entities and Relationships Diagram
 
 # Database Diagram
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.com/mayferdev/urvana-documentation/blob/main/assets/DIAGRAM.png?raw=true)
