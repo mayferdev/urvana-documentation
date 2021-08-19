@@ -29,12 +29,25 @@ Urvana general documentation
 - A residential is a group of properties for example: apartment building, condominium, residential.
 - Residentials is a way to group properties, ammenities, rules, maintenance fees, administrative users, owners and tenants.
 
+### Plan
+- a plan is useful for knowing which plan the residential is registered to. 
+- For example:
+- - freemium, basic, pro, advanced
+- this table allows us to know how much to charge the residential owner each month and which are the usage limits by feature or permissions by level. 
+
 ### Property
 - A property is a single home or appartment
 - A property has: an owner and a tenant.
+- - properties are attached to users which at the end are the responsible for payments and management.
 - - In some cases the owner and the tenant can be the same user.
 - - In other cases the owner and the tenant will be different users.
 - - In other cases a user can own multiple properties as well as be the main tenant (live in) multiple properties at the same time.  
+
+### maintenance fees
+- maintenance fees have a residential attached in order to be able to define whick fees apply to a specific residential
+- - this is because fees might vary across residentials, For this purposes fees are specific to a residential, which we use to generate a monhtly balance to pay. 
+
+
 
 # Entities and Relationships Diagram
 
